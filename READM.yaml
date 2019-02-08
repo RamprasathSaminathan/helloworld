@@ -1,9 +1,9 @@
 steps:
 
 - task: AzurePowerShell@3
-displayName: 'Azure PowerShell script: InlineScript'
-inputs:
-azureSubscription: $(test)
-ScriptType: InlineScript
-Inline: 'test test'
-azurePowerShellVersion: LatestVersion
+  displayName: 'Azure PowerShell script: InlineScript'
+  inputs:
+    azureSubscription: $(test)
+    ScriptType: InlineScript
+    Inline: '$env:test'
+    azurePowerShellVersion: LatestVersion
