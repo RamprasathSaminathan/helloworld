@@ -3,7 +3,7 @@ steps:
 - task: AzurePowerShell@3
   displayName: 'Azure PowerShell script: InlineScript'
   inputs:
-    azureSubscription: $(test)
+    azureSubscription: ram
     ScriptType: InlineScript
     Inline: '$env:test'
     azurePowerShellVersion: LatestVersion
