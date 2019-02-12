@@ -1,9 +1,15 @@
 steps:
 
+- powershell: |
+   Write-host $env:test2
+   Write-Output ("##vso[task.setvariable variable=test2;]ram")
+   $env:test2
+  displayName: 'PowerShell Script'
+  
 - task: AzurePowerShell@3
   displayName: 'Azure PowerShell script: InlineScript'
   inputs:
-    azureSubscription: ram
+    azureSubscription: $(test2)
     ScriptType: InlineScript
-    Inline: '$env:test'
+    Inline: '$env:test2'
     azurePowerShellVersion: LatestVersion
